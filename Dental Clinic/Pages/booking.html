@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Booking | Dentalist</title>
+    <link
+      rel="shortcut icon"
+      type="x-icon"
+      href="/Assets/Images/dentalist-favicon-color (1).png"
+    />
+    <link rel="stylesheet" href="../Style/booking.css" />
+    <script src="../Scripts/booking.js"></script>
+    <script src="../Scripts/home.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/index.html" class="logo-here">
+        <img
+          src="../Assets/Images/dentalist-high-resolution-logo-transparent (2).png"
+          alt="Dentalist-Logo"
+          height="80"
+          width="240"
+      /></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./services.html">Booking</a></li>
+        </ul>
+      </nav>
+      <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+    </header>
+
+    <main>
+      <div class="section">
+        <div class="main-section">
+          <h1>Your smile starts here.</h1>
+          <p class="first-paragraph">
+            Get started at our modern Sunny Hill office at "Rruga B" using the
+            form below, or give us a call at (+383) 44 123 123 to chat with our
+            helpful front office team—we’re cool with texting, too!
+          </p>
+          <h4>REQUEST AN APPOINTMENT</h4>
+
+          <form onsubmit="submitForm(event)">
+            <!-- Name -->
+            <label for="firstName" id="text-transform">First Name </label>
+
+            <input type="text" id="firstName" name="firstName" required />
+            <label for="lastName" id="text-transform">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              required
+              class="input-type"
+            /><br />
+
+            <!-- Email -->
+            <label for="email" id="text-transform">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="input-type"
+            /><br />
+
+            <!-- Phone -->
+            <label for="phone" id="text-transform">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              class="input-type"
+            /><br />
+
+            <!-- How to reach -->
+            <h3 id="label-transform">How should we reach you?</h3>
+            <div class="input-section">
+              <div class="input-field">
+                <input
+                  class="input-value"
+                  type="radio"
+                  value="phone"
+                  checked
+                  name="howToContact"
+                />
+                <label class="input-label" for="callMe">Call Me</label>
+              </div>
+              <div class="input-field">
+                <input
+                  class="text-input"
+                  type="radio"
+                  value="text"
+                  checked
+                  name="howToContact"
+                />
+                <label class="input-Text" for="textMe">Text Me</label>
+              </div>
+              <div class="input-field">
+                <input
+                  class="input-value"
+                  type="radio"
+                  value="email"
+                  checked
+                  name="howToContact"
+                />
+                <label class="input-email" for="emailMe">Email Me</label>
+              </div>
+            </div>
+            <hr class="horizontal-divider" />
+
+            <h3 id="label-transform">Have we seen you before?</h3>
+            <div class="input-field">
+              <input
+                type="radio"
+                name="isNewPatient"
+                id="newPatient"
+                value="true"
+                checked
+                class="input-NewPatient"
+              />
+              <label class="newPatient" for="I'm a new patient"
+                >I'm a new Patient</label
+              >
+            </div>
+
+            <div class="input-field">
+              <input
+                type="radio"
+                name="isNewPatient"
+                id="returningPatient"
+                value="false"
+                class="input-Patient"
+              />
+              <label class="returning-patient" for="I'm a returning patient"
+                >I'm a returning patient</label
+              >
+            </div>
+
+            <!--Specific Provider-->
+            <label for="provider"
+              >Do you have a specific provider you'd like to see?</label
+            >
+            <select id="provider" name="provider">
+              <option value="noPreference" selected>No Preference</option>
+              <option value="DrMichaelMulick">Dr. Michael Mulick</option>
+              <option value="DrNickRadandt">Dr. Nick Radandt</option>
+              <option value="DrShanaReidy">Dr. Shana Reidy</option>
+              <option value="DrBrigitteHiggins">Dr. Brigitte Higgins</option>
+              <option value="DrJakeEricksen">Dr. Jake Ericksen</option>
+              <!-- Add provider options here --></select
+            ><br />
+            <hr class="horizontal-divider" />
+            <!-- Message -->
+            <label for="message">Message: </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              cols="50"
+              placeholder="Type your message here"
+            ></textarea>
+
+            <!-- How did you hear about us? -->
+            <label for="heardAbout">How did you hear about us? </label>
+            <select id="heardAbout" name="heardAbout">
+              <option value="option1">Web Search</option>
+              <option value="option2">Facebook</option>
+              <option value="option3">Referral from friend/family</option>
+              <option value="option4">Referral from another practice</option>
+              <option value="option5">I saw an advertisement</option>
+              <option value="option6">I'm current patient</option>
+              <option value="option7">Other</option>
+              <!-- Add more options here --></select
+            ><br />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+        <div class="google-maps">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.5852585483613!2d21.170140976283474!3d42.648951616801114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ec0d5603ad7%3A0x1ba2ce0329d66240!2sRruga%20B%2C%20Prishtina!5e0!3m2!1sen!2s!4v1705603956617!5m2!1sen!2s"
+            width="600"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+          <hr />
+          <div class="aside-section">
+            <aside class="contact-info">
+              <h4>CONTACT INFORMATION</h4>
+              <p id="contact">
+                <span class="green bold">Dentalist</span><br />
+                Rruga B <br />
+                Prishtin 10000
+              </p>
+
+              <p id="contact-number">
+                Call or Text: <span class="green bold">(206) 325-0166</span>
+                <br />
+                Fax: (206)22-9345 Email:
+                <a href="mailto:smiles@dentalcareseattle.com"
+                  ><span class="green">smiles@dentalcareseattle.com</span></a
+                >
+              </p>
+            </aside>
+          </div>
+          <hr />
+          <aside class="hours-info">
+            <h4 id="hours-secition">Hours</h4>
+            <p class="working-hours">
+              Monday — 7am to 5pm<br />
+              Tuesday — 7am to 5pm<br />
+              Wednesday — 7am to 5pm<br />
+              Thursday — 7am to 5pm<br />
+              Friday — 7am to 3pm<br />
+              Saturday — Closed<br />
+              Sunday — Closed
+            </p>
+          </aside>
+
+          <aside class="hiring-info">
+            <h4>WE'RE HIRING!</h4>
+            <p style="font-size: 14px">
+              Contact us on the information above to explore opportunities to
+              join our team.
+            </p>
+          </aside>
+
+          <aside class="emergency-info">
+            <h4 id="emergency-secition">EMERGENCIES</h4>
+            <p class="emergency-paragraph">
+              Call us for <span class="green">emergency</span> dental treatment
+              at our office in "Rruga B", with quick access to central Sunny
+              Hill.
+            </p>
+          </aside>
+
+          <aside class="parking-info">
+            <h4 id="parking-secition">PARKING</h4>
+            <p class="parking-paragraph">
+              Parking is available in our building, with access at the bottom of
+              "Rruga B" on the North side. Street parking is also available on
+              two-hour parking meters on each street surrounding our location.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <section class="section-6">
+        <article class="art.one">
+          <!-- Main Section of Footer -->
+          <h4 class="h4-1">ABOUT DENTALIST</h4>
+          <br />
+          <p class="foot-one">
+            Dentalist is a top-rated local practice for cosmetic, preventative,
+            <br />
+            and restorative dentistry on Prishtina. Visit us at our convenient
+            <br />
+            office at Rruga B and expect the best care, gentle treatment, and
+            <br />
+            beautiful results from your dentist!
+          </p>
+        </article>
+        <!-- Second Section of Footer -->
+        <article class="art-one">
+          <h4 class="h4-1">QUICK LINKS</h4>
+          <br />
+          <ul class="foot-one" class="foot-links">
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./booking.html">Booking</a></li>
+            <li><a href="./services.html">Services</a></li>
+          </ul>
+        </article>
+        <!--Third Section of Footer  -->
+        <article class="art-two">
+          <h4 class="h4-1">CONTACT US</h4>
+          <br />
+          <p class="foot-one">
+            Call or Text: (+383) 44 123 123 <br />
+            Email: <a href="">dentalist@mail.com</a>
+          </p>
+        </article>
+      </section>
+    </footer>
+  </body>
+</html>
